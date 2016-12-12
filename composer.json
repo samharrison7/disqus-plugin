@@ -1,6 +1,24 @@
 {
     "name": "samharrison/disqus-plugin",
     "type": "streams-addon",
+    "description": "A simple plugin to display Disqus comments.",
+    "keywords": [
+        "streams plugin",
+        "disqus"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sam Harrison",
+            "email": "samharrison.xg@gmail.com",
+            "role": "Owner"
+        }
+    ],
+    "support": {
+        "email": "samharrison.xg@gmail.com",
+        "issues": "https://github.com/samharrison7/disqus-plugin/issues",
+        "source": "https://github.com/samharrison7/disqus-plugin"
+    },
     "autoload": {
         "psr-4": {
             "Samharrison\\DisqusPlugin\\": "src/"
