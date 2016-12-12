@@ -3,7 +3,6 @@
 use Anomaly\Streams\Platform\Addon\Plugin\Plugin;
 use Twig_Environment;
 use Twig_NodeVisitorInterface;
-use Anomaly\Streams\Platform\View\ViewTemplate;
 
 class DisqusPlugin extends Plugin
 {
