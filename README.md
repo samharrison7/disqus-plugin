@@ -54,15 +54,15 @@ More on Disqus' configuration variable can be found in the
 
 ### Output the Javascript only
 
-To display comments, a `<div>` with `id="disqus-thread"` is required where the comments should be displayed on the page.
+To display comments, a `<div>` with `id="disqus_thread"` is required where the comments should be displayed on the page.
 The `{{ disqus()|raw }}` plugin above includes this wherever in the template it is used. If you wish to output only
-the Javascript so that you have more control over where and how the `<div id="disqus-thread">` is display, you can
+the Javascript so that you have more control over where and how the `<div id="disqus_thread">` is display, you can
 use the `{{ disqus_script()|raw }}` plugin.
 
 For example, this might be useful is you want to add custom classes to the `<div>`, or to place it in a template where
 it isn't so easy to get the page or post's ID:
 
 ```
-<div id="disqus-thread" class="your-custom-class"></div>
+<div id="disqus_thread" class="your-custom-class"></div>
 {{ disqus_script() }}
 ```
