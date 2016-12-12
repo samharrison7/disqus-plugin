@@ -21,7 +21,7 @@
     },
     "config": {
         "vendor-dir": "addons/shared"
-    }
+    },
     "autoload": {
         "psr-4": {
             "Samharrison\\DisqusPlugin\\": "src/"
