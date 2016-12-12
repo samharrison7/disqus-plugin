@@ -19,6 +19,9 @@
         "issues": "https://github.com/samharrison7/disqus-plugin/issues",
         "source": "https://github.com/samharrison7/disqus-plugin"
     },
+    "config": {
+        "vendor-dir": "addons/shared"
+    }
     "autoload": {
         "psr-4": {
             "Samharrison\\DisqusPlugin\\": "src/"
