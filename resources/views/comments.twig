@@ -1,0 +1,18 @@
+{# Don't load Disqus div if disqus_script() used #}
+{% if not script_only %}
+    <div id="disqus_thread"></div>
+{% endif %}
+
+<script>
+    var disqus_config = function () {
+        this.page.url = '{{ url_current() }}';
+        {% if identifier %}this.page.identifier = '{{ identifier }}';{% endif %} // Page's unique identifier. Defaults to the URL.
+        {% if title %}this.page.title = '{{ title }}';{% endif %} // Defaults to <title> attribute
+    };
+    (function () {
+        var d = document, s = d.createElement('script');
+        s.src = '//{{ setting_value("samharrison.plugin.disqus::shortname") }}.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>

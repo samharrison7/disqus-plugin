@@ -1,0 +1,9 @@
+{
+    "name": "samharrison/disqus-plugin",
+    "type": "streams-addon",
+    "autoload": {
+        "psr-4": {
+            "Samharrison\\DisqusPlugin\\": "src/"
+        }
+    }
+}
