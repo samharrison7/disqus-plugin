@@ -105,7 +105,7 @@ just assigned the new field to, and add the following code to the bottom of the 
 
 Depending on how your site is set up, the Post Layout might now look something like this:
 
-![post_layout](https://cloud.githubusercontent.com/assets/3359948/21137589/1d34f3ee-c122-11e6-919a-0d95b96741f1.png)
+![post_layout](https://cloud.githubusercontent.com/assets/3359948/21154989/48326f22-c168-11e6-818b-0d9b508f433a.png)
 
 When you create a new post of this type, you can now select if you want Disqus comments to be displayed or not, and if
 you opt to display them, the comments will be embedded at the bottom of your blog post:
