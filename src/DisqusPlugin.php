@@ -26,7 +26,8 @@ class DisqusPlugin extends Plugin
                             'script_only'   => false,
                         ]
                     );
-                }
+                },
+                ['is_safe' => ['html']]
             ),
             new \Twig_SimpleFunction(
                 'disqus_script',
@@ -39,7 +40,8 @@ class DisqusPlugin extends Plugin
                             'script_only'   => true
                         ]
                     );
-                }
+                },
+                ['is_safe' => ['html']]
             )
         ];
     }

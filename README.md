@@ -7,6 +7,12 @@ This plugin provides a simple way to display Disqus comments on pages, posts or 
 Simply copy the plugin's files to `addons/{site-ref}/samharrison/disqus-plugin` (or ask your administrator if you don't
 have access to your site's files).
 
+Alternative, you can use Composer:
+
+```
+composer require samharrison/disqus-plugin
+```
+
 ## Setup
 
 Firstly, make sure you've registered your website with Disqus. Check out their
@@ -21,7 +27,7 @@ won't load.
 The simplest way to display comments is to add
 
 ```
-{{ disqus()|raw }}
+{{ disqus() }}
 ```
 
 to a template (e.g., you theme's layout files, or a post/page type's layout field). Disqus takes the page's unique
@@ -31,13 +37,13 @@ You can do so by providing it as a parameter for the plugin. For example, if you
 template:
 
 ```
-{{ disqus(post.id)|raw }}
+{{ disqus(post.id) }}
 ```
 
 Or, on a page's template:
 
 ```
-{{ disqus(page.id)|raw }}
+{{ disqus(page.id) }}
 ```
 
 You can also prevent Disqus using the `<title>` attribute by specifying a title as the second parameter:
@@ -56,9 +62,9 @@ More on Disqus' configuration variable can be found in the
 ### Output the Javascript only
 
 To display comments, a `<div>` with `id="disqus_thread"` is required where the comments should be displayed on the page.
-The `{{ disqus()|raw }}` plugin above includes this wherever in the template it is used. If you wish to output only
+The `{{ disqus() }}` plugin above includes this wherever in the template it is used. If you wish to output only
 the Javascript so that you have more control over where and how the `<div id="disqus_thread">` is display, you can
-use the `{{ disqus_script()|raw }}` plugin.
+use the `{{ disqus_script() }}` plugin.
 
 For example, this might be useful is you want to add custom classes to the `<div>`, or to place it in a template where
 it isn't so easy to get the page or post's ID:
@@ -93,7 +99,7 @@ just assigned the new field to, and add the following code to the bottom of the 
 
 ```
 {% if post.enable_disqus %}
-    {{ disqus(post.id)|raw }}
+    {{ disqus(post.id) }}
 {% endif %}
 ```
 
