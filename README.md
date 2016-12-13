@@ -4,7 +4,8 @@ This plugin provides a simple way to display Disqus comments on pages, posts or 
 
 ## Installation
 
-Simply copy the plugin's files to `addons/{site-ref}/samharrison/disqus-plugin`.
+Simply copy the plugin's files to `addons/{site-ref}/samharrison/disqus-plugin` (or ask your administrator if you don't
+have access to your site's files).
 
 ## Setup
 
@@ -66,3 +67,44 @@ it isn't so easy to get the page or post's ID:
 <div id="disqus_thread" class="your-custom-class"></div>
 {{ disqus_script() }}
 ```
+
+`disqus_script()` supports the same options as `disqus()`.
+
+
+## Use case: Post comments that can be disabled
+
+This plugin makes adding Disqus comments to a post super easy, even if you don't have access to your site's theme files.
+Here's an example of how to add Disqus comments to a post, with an option on each post as to whether you want the
+comments displayed or not.
+
+Firstly, install the plugin as above and ensure you've set your forum shortname in the Settings module. Now, let's
+create a boolean (true/false) field type by going to the Field section in the Posts module, adding a new field and
+selecting "Boolean" as the field type:
+
+![add_field](https://cloud.githubusercontent.com/assets/3359948/21137512/afe834cc-c121-11e6-948e-42ff534c9ea4.png)
+
+Name the field whatever you like (e.g., "Display Disqus comments?") and set the slug to "enable_disqus". Now assign this
+field to a particular page type in the Types section of the Posts module, by selecting "Assignments" on the page type
+you want (e.g., Default) and then "Assign Fields". Select the field you just created by the name you gave it, and fill
+in any details you wish on the field assignment form.
+
+Now we can edit the page type's layout to show the Disqus comments: Select the "Edit" button of the page type you've
+just assigned the new field to, and add the following code to the bottom of the Post Layout field:
+
+```
+{% if post.enable_disqus %}
+    {{ disqus(post.id)|raw }}
+{% endif %}
+```
+
+Depending on how your site is set up, the Post Layout might now look something like this:
+
+![post_layout](https://cloud.githubusercontent.com/assets/3359948/21137589/1d34f3ee-c122-11e6-919a-0d95b96741f1.png)
+
+When you create a new post of this type, you can now select if you want Disqus comments to be displayed or not, and if
+you opt to display them, the comments will be embedded at the bottom of your blog post:
+
+![post](https://cloud.githubusercontent.com/assets/3359948/21137509/afe2a4ee-c121-11e6-820b-629951ebadbc.png)
+
+
+
