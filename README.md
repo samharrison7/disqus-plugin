@@ -46,7 +46,7 @@ Or, on a page's template:
 {{ disqus(page.id) }}
 ```
 
-You can also prevent Disqus using the `<title>` attribute by specifying a title as the second parameter:
+*Warning:* Posts and pages (and other entries you wish to display comments on) might share the same ID, so if you wish to display comments on them all, it might be wise to prefix the identifier; for example, `{{ disqus('posts-'~post.id) }}`. You can also prevent Disqus using the `<title>` attribute by specifying a title as the second parameter:
 
 ```
 {{ disqus(
